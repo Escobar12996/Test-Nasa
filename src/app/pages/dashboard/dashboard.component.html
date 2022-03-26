@@ -1,35 +1,20 @@
 <app-header></app-header>
 
 <div class="container m-auto border-2 bg-white p-5">
-  <form class="border-b mb-4">
-    <div>
-      <label class="text-base">Modo de listado</label>
-      <mat-radio-group
-        class="flex flex-col sm:flex-row"
-        formControlName="workSubtype"
-      >
-        <mat-radio-button
-          [value]="'monologue'"
-          class="rounded mr-1 mb-2 p-2 text-sm"
-          [ngClass]="
-            false ? 'border-2 border-gray-700' : 'border border-gray-400'
-          "
-        >
-          Básico
-        </mat-radio-button>
-        <mat-radio-button
-          [value]="'sketch'"
-          class="rounded mr-1 mb-2 p-2 text-sm"
-          [ngClass]="
-            false ? 'border-2 border-gray-700' : 'border border-gray-400'
-          "
-        >
-          Avanzado
-        </mat-radio-button>
-      </mat-radio-group>
-    </div>
-  </form>
-
-  <app-basic></app-basic>
-  <app-advanced *ngIf="false"></app-advanced>
+  <table class="w-fullfont-sans">
+    <thead>
+      <tr class="grid grid-cols-12">
+        <th class="col-span-2">Fecha</th>
+        <th class="col-span-5 lg:col-span-7">Imagen</th>
+        <th class="col-span-5 lg:col-span-3">Titulo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="grid grid-cols-12 cursor-pointer m-2 hover:bg-gray-100" *ngFor="let item of list" (click)="next(item)">
+        <td class="col-span-2 text-base"><p>{{ item.date }}</p></td>
+        <td class="col-span-5 lg:col-span-7 whitespace-pre-wrap"><p class="break-all">{{ item.url }}</p></td>
+        <td class="col-span-5 lg:col-span-3"><p>{{ item.title}}</p></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
