@@ -16,13 +16,17 @@ export class DashboardComponent implements OnInit {
   constructor(public apiNasa: ApiNasaService, private router: Router) {}
 
   ngOnInit() {
-    this.getApod(new Date(new Date().setDate(this.date.getDate() - 6)), this.date);
+    this.getApod(
+      new Date(new Date().setDate(this.date.getDate() - 6)),
+      this.date
+    );
   }
 
   getApod(startDate: Date, endDate: Date) {
     this.apiNasa.getApodStartEnd(startDate, endDate).subscribe({
       next: (response) => {
         this.list = response;
+        this.list = this.list.reverse();
       },
       error: (error) => {
         this.error = true;
