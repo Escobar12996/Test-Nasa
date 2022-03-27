@@ -1,20 +1,23 @@
 <app-header></app-header>
 
-<div class="container m-auto border-2 bg-white p-5 grid grid-cols-12">
-  <div class="col-span-4 flex">
-    <img class="my-auto" [src]="selected.url" [title]="selected.title" />
-  </div>
-
-  <div class="col-span-8">
-    <div>
-      <h1 class="text-center w-full text-lg font-bold">{{ selected.title }}</h1>
+<div class="container m-auto border-2 bg-white p-5">
+  <div class="w-full flex-col-reverse flex md:flex-row">
+    <div class="w-full md:w-4/12 flex">
+      <img class="my-auto" [src]="selected.url" [title]="selected.title" />
     </div>
 
-    <div class="p-4">
-      <p class="text-center w-full text-sm">{{ selected.explanation }}</p>
+    <div class="w-full md:w-8/12">
+      <div>
+        <h1 class="text-center w-full text-lg font-bold">{{ selected.title }}</h1>
+      </div>
+
+      <div class="p-4">
+        <p class="text-center w-full text-sm">{{ selected.explanation }}</p>
+      </div>
     </div>
   </div>
-  <div class="col-span-12 m-4 ml-0">
+
+  <div class="w-full m-4 ml-0">
     <button class="border px-5 py-3 rounded-md bg-red-500 text-white" (click)="back()">
       Volver
     </button>
