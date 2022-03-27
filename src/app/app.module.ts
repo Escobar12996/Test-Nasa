@@ -1,3 +1,4 @@
+import { ErrorModule } from './pages/error/error.module';
 import { DetailModule } from './pages/detail/detail.module';
 import { ApiNasaService } from './services/api-nasa.service';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
@@ -10,7 +11,6 @@ import { AppComponent } from './app.component';
 import { APP_ROUTING } from './app-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     APP_ROUTING,
     DashboardModule,
     DetailModule,
+    ErrorModule,
     NoopAnimationsModule
   ],
   declarations: [AppComponent],
