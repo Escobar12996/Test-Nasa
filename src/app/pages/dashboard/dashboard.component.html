@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="container m-auto border-2 bg-white p-5">
+  <table class="w-full font-sans">
+    <thead>
+      <tr class="grid grid-cols-12">
+        <th class="col-span-2">Fecha</th>
+        <th class="col-span-5 lg:col-span-7">Imagen</th>
+        <th class="col-span-5 lg:col-span-3">Titulo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="grid grid-cols-12 cursor-pointer m-2 hover:bg-gray-100" *ngFor="let item of list" (click)="next(item)">
+        <td class="col-span-2 text-base"><p>{{ item.date }}</p></td>
+        <td class="col-span-5 lg:col-span-7 whitespace-pre-wrap"><p class="break-all">{{ item.url }}</p></td>
+        <td class="col-span-5 lg:col-span-3"><p>{{ item.title}}</p></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="fixed z-50 inset-0 bg-dark bg-opacity-50" *ngIf="error">
+  <div
+    class="items-end justify-center pt-4 px-4 pb-20 text-center block sm:p-0"
+  >
+    <span
+      class="hidden sm:inline-block sm:align-middle sm:h-screen"
+      aria-hidden="true"
+    >
+      &#8203;
+    </span>
+
+    <div
+      class="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl w-11/12 mb-4"
+    >
+      <div class="flex flex-row items-center">
+        <p
+          class="font-kanit-bold text-lg whitespace-nowrap ml-4 w-full"
+        >
+      Lo sentimos, se ha producido un error al cargar...
+
+      </p>
+        <button
+          class="text-primary flex justify-end items-center mr-6 hover:underline font-kanit-bold"
+          (click)="error = false"
+        >
+          CERRAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
