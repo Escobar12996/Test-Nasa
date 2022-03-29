@@ -10,4 +10,4 @@ const appRoutes: Routes = [
   { path: "**", component: ErrorComponent }
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(appRoutes);
+export const appRouting = RouterModule.forRoot(appRoutes);
