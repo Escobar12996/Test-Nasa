@@ -13,12 +13,12 @@ export class ApiNasaService {
   public getSimple(date: Date) {
     const url = `${this.apiUrl}/planetary/apod?api_key=${
       this.key
-    }&date=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    }&date=${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     return this.http.get(url);
   }
 
   public getApodStartEnd(startDate: Date, endDate: Date) {
-    const url = `${this.apiUrl}/planetary/apod?api_key=${this.key}&start_date=${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}&end_date=${endDate.getFullYear()}-${endDate.getMonth()}-${endDate.getDate()}`;
+    const url = `${this.apiUrl}/planetary/apod?api_key=${this.key}&start_date=${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}&end_date=${endDate.getFullYear()}-${endDate.getMonth()+1}-${endDate.getDate()}`;
     return this.http.get(url);
   }
 }
