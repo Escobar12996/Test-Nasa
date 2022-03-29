@@ -8,22 +8,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { APP_ROUTING } from './app-routing.module';
+import { appRouting } from './app-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
-    APP_ROUTING,
+    appRouting,
     DashboardModule,
     DetailModule,
     ErrorModule,
     NoopAnimationsModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   providers: [ApiNasaService],
   bootstrap: [AppComponent],
 })
